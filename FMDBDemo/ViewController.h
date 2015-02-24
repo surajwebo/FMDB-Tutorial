@@ -7,7 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FMDatabase.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate> {
+    
+    __weak IBOutlet UITextField *txtFieldForName;
+    __weak IBOutlet UITextField *txtFieldForAge;
+    __weak IBOutlet UIButton *btnAdd;
+    __weak IBOutlet UITableView *tableViewForDB;
+    NSMutableArray *arrayForName;
+    NSMutableArray *arrayForage;
+    
+    FMDatabase *fmDatabase;
+}
+
+- (IBAction)addToDB:(id)sender;
 
 @end
